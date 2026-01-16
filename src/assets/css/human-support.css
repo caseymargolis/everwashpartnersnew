@@ -1927,7 +1927,7 @@ table {
 
 /* Footer Styles */
 .footer {
-  background-image: url('/assets/images/footer-bg-new.png');
+  background-image: url('/assets/images/footer-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   color: #ffffff;
