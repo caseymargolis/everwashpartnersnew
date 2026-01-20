@@ -1,0 +1,237 @@
+/* ====================================
+   ABOUT PAGE - MATCHING OLD SITE STYLING
+   ==================================== */
+
+/* About Hero Section */
+#aboutHero {
+  padding: 25% 0 5% 0;
+  background: linear-gradient(
+      180deg,
+      rgba(27, 41, 53, 0.25) 0%,
+      rgba(27, 41, 53, 0.75) 100%
+    ),
+    url(/img/james-lewis-94yFYwJZVL4-unsplash.jpg);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: 50% 85%;
+  background-size: cover;
+  color: var(--white);
+}
+
+#aboutHero h1 {
+  color: white;
+}
+
+/* Mission Section */
+#aboutMission {
+  padding: 7% 0;
+}
+
+#aboutMission .col-lg-7 {
+  padding: 0 4%;
+}
+
+#aboutMission h3 {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  font-size: 4.3rem;
+  line-height: 1.1;
+  color: var(--color-primary);
+}
+
+#aboutMission p {
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+/* History Section */
+#ourHistory {
+  padding: 3rem 0;
+  color: var(--white);
+  background: var(--color-primary);
+}
+
+#ourHistory h3 {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  font-size: 4.3rem;
+  line-height: 1.1;
+  color: white;
+}
+
+#ourHistory .row {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+#ourHistory .row:first-of-type {
+  align-items: flex-end;
+}
+
+.timeline-event {
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.timeline-event-bottom h5 {
+  margin-top: 1rem;
+}
+
+.timeline-event h5 {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.timeline-event p {
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+}
+
+/* Timeline Line and Circles */
+#ourHistory .line {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+  position: relative;
+}
+
+/* Timeline Circles */
+.timeline-event:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-secondary);
+  border: 3px solid white;
+  border-radius: 50%;
+  left: calc(50% - 10px);
+  z-index: 10;
+}
+
+/* Top timeline events */
+.timeline-event-top:after {
+  bottom: -35px;
+}
+
+/* Bottom timeline events */
+.timeline-event-bottom:after {
+  top: -35px;
+}
+
+/* Dotted connectors */
+.timeline-event:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 2px dotted rgba(255, 255, 255, 0.5);
+  left: calc(50% - 1px);
+  z-index: 5;
+}
+
+.timeline-event-top:before {
+  bottom: -35px;
+  height: 30px;
+}
+
+.timeline-event-bottom:before {
+  top: -35px;
+  height: 30px;
+}
+
+/* Responsive for mobile timeline */
+@media (max-width: 767px) {
+  #aboutHero {
+    padding: 15% 0 10% 0;
+  }
+  
+  #aboutMission h3 {
+    font-size: 2.5rem;
+  }
+  
+  #ourHistory h3 {
+    font-size: 2.5rem;
+  }
+  
+  #ourHistory .timeline-event h5 {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  #ourHistory .timeline-event {
+    padding: 0;
+    padding-left: 4rem;
+    margin-left: 0.5rem;
+  }
+
+  #ourHistory .container {
+    position: relative;
+  }
+
+  .timeline-event:after {
+    left: 10px;
+    top: 0;
+  }
+
+  .timeline-event:before {
+    width: 15px;
+    height: 0;
+    left: 34px;
+    top: 11px;
+  }
+
+  #ourHistory .line {
+    position: absolute;
+    left: 29px;
+    top: 3.5rem;
+    bottom: 1rem;
+    height: auto;
+    border-left: 1px solid var(--gray-400);
+    border-bottom: none;
+  }
+}
+
+/* Additional styling to match old site */
+.hide-on-mobile {
+  display: block;
+}
+
+.hide-on-desktop {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  .hide-on-desktop {
+    display: block;
+  }
+}
+
+/* Brand font class */
+.brand-nubolts {
+  font-family: var(--font-family-heading) !important;
+  font-weight: 400;
+  font-size: 4.3rem;
+  line-height: 1.1;
+}
+
+/* CSS Variables for old site compatibility */
+:root {
+  --white: #ffffff;
+  --gray-400: #ced4da;
+}
