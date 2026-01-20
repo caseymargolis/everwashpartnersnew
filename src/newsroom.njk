@@ -1,0 +1,122 @@
+---
+layout: base.njk
+title: EverWash Newsroom
+pageStyle: newsroom
+---
+
+<!-- Hero Section -->
+<section class="hero hero-newsroom">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1>EverWash Newsroom</h1>
+        <h3>Get the latest news and announcements from EverWash</h3>
+        <div class="article-search-form mt-4">
+          <div id="search"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Curve Divider -->
+  <div class="curve">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path fill="white" d="M0,0 C720,40 720,40 1440,0 L1440,80 L0,80 Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- The Latest News -->
+<section id="headlinePost">
+  <div class="container">
+    <h2>The Latest News</h2>
+    <div class="row">
+      <div class="col-12">
+        {%- for post in collections.newsroom | reverse -%}
+        {% if loop.index0 < 1 %}
+        <a href="{{ post.url }}" class="latest-article-card" style="text-decoration: none; color: inherit;">
+          <img src="{{ post.data.image | default('/assets/images/hero-bg-new.png') }}" alt="{{ post.data.title }}" class="latest-article-image">
+          <div class="latest-article-content">
+            <p class="article-date">{{ post.data.date | postDate }}</p>
+            <h3>{{ post.data.title }}</h3>
+          </div>
+        </a>
+        {% endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Stories -->
+<section id="featuredArticles">
+  <div class="container">
+    <h2>Featured Stories</h2>
+    <div class="row">
+      {%- set featuredCount = 0 -%}
+      {%- for post in collections.newsroom | reverse -%}
+      {% if post.data.tags and post.data.tags.indexOf("featured") > -1 and featuredCount < 3 %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <a href="{{ post.url }}" class="article-card" style="text-decoration: none; color: inherit; display: block;">
+          <img src="{{ post.data.image | default('/assets/images/hero-bg-analytics.png') }}" alt="{{ post.data.title }}" class="article-image">
+          <div class="article-card-content">
+            <p class="article-date">{{ post.data.date | postDate }}</p>
+            <h4>{{ post.data.title }}</h4>
+          </div>
+        </a>
+      </div>
+      {% set featuredCount = featuredCount + 1 %}
+      {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- Read More Section -->
+<section id="allArticles">
+  <div class="container">
+    <h2>Read More</h2>
+    <div class="row" id="articlesContainer">
+      <!-- All non-featured newsroom articles -->
+      {%- for post in collections.newsroom | reverse -%}
+      {% if "featured" not in post.data.tags and loop.index0 > 0 %}
+      <div class="col-lg-4 col-md-6 mb-4 article-container" style="display: none;">
+        <a href="{{ post.url }}" class="article-card" style="text-decoration: none; color: inherit; display: block;">
+          <img src="{{ post.data.image | default('/assets/images/hero-bg-payment.png') }}" alt="{{ post.data.title }}" class="article-image">
+          <div class="article-card-content">
+            <p class="article-date">{{ post.data.date | postDate }}</p>
+            <h4>{{ post.data.title }}</h4>
+          </div>
+        </a>
+      </div>
+      {% endif %}
+      {%- endfor -%}
+    </div>
+    
+    <!-- Show More Button -->
+    <div class="text-center mt-5">
+      <button id="showMoreBtn" class="btn__primary show-more-btn">
+        <span>Show More +</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Algolia Search Integration -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+/>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+></script>
+<script type="text/javascript">
+  algoliasearchNetlify({
+    appId: "G48FVNDGXU",
+    apiKey: "cb6a5aaafd00200cb4b5635bca187b62",
+    siteId: "7b6d9df2-4352-4e0e-a1cd-488331730322",
+    hitsPerPage: "10",
+    branch: "main",
+    selector: "div#search",
+  });
+</script>

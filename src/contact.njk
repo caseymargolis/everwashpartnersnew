@@ -49,7 +49,7 @@ title: Contact Sales - EverWash
                 </div>
                 <form 
                   id="everWashForm" 
-                  name="EverWash Form - one form multiple buttons" 
+                  name="EverWash Form" 
                   method="POST"
                   action="/thank-you/" 
                   data-netlify="true" 
@@ -291,3 +291,40 @@ title: Contact Sales - EverWash
     }
   }
 </style>
+
+<script>
+// Add form submission tracking without breaking Netlify functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('everWashForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // Don't prevent default - let Netlify handle the form submission
+            
+            // Track with Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion_event_submit_lead_form', {
+                    'event_category': 'Contact Form',
+                    'event_label': 'Contact Page Submission'
+                });
+                console.log('Google Analytics form submission tracked');
+            }
+            
+            // Track with Facebook Pixel
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_category: 'Contact Form',
+                    source: 'Contact Page'
+                });
+                console.log('Facebook Pixel form submission tracked');
+            }
+            
+            // Track with Hotjar (if available)
+            if (typeof hj === 'function') {
+                hj('event', 'contact_form_submit');
+                console.log('Hotjar form submission tracked');
+            }
+        });
+    }
+});
+</script>
