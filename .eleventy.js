@@ -5,6 +5,9 @@ module.exports = function(eleventyConfig) {
     // Copy img directory for blog and newsroom images
     eleventyConfig.addPassthroughCopy("src/img");
 
+    // Calling toml file
+    eleventyConfig.addPassthroughCopy('./src/netlify.toml');
+
     // Blog collections
     eleventyConfig.addCollection("blog", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/blog/*.md");
