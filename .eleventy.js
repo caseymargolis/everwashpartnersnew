@@ -1,10 +1,18 @@
 module.exports = function(eleventyConfig) {
     // Copy ALL assets from src/assets/ to public/assets/
     eleventyConfig.addPassthroughCopy("src/assets");
+    
+    // Copy img directory for blog and newsroom images
+    eleventyConfig.addPassthroughCopy("src/img");
 
     // Blog collections
     eleventyConfig.addCollection("blog", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/blog/*.md");
+    });
+    
+    // Newsroom collections
+    eleventyConfig.addCollection("newsroom", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/newsroom/*.md");
     });
     
     // Add date filter for blog posts

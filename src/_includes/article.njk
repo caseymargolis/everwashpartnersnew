@@ -124,11 +124,16 @@ pageStyle: blog
     <h2>Related Articles</h2>
     <div class="row">
       {% set related_posts = [] %}
-      {% set excluded_tags = ['post', 'blog', 'featured'] %}
+      {% set excluded_tags = ['post', 'blog', 'featured', 'newsroom'] %}
+      {% if tags.includes("newsroom") %}
+        {% set articlePool = collections.newsroom %}
+      {% else %}
+        {% set articlePool = collections.blog %}
+      {% endif %}
       
       <!-- Find posts with matching tags -->
       {% for tag in tags %}
-        {% for post in collections.blog %}
+        {% for post in articlePool %}
           {% if tag in post.data.tags and tag not in excluded_tags and post.url != page.url %}
             {% if post not in related_posts and related_posts.length < 3 %}
               {% set related_posts = (related_posts.push(post), related_posts) %}
@@ -138,7 +143,7 @@ pageStyle: blog
       {% endfor %}
       
       <!-- Fill remaining slots with recent posts -->
-      {% for post in collections.blog | reverse %}
+      {% for post in articlePool | reverse %}
         {% if post not in related_posts and post.url != page.url and related_posts.length < 3 %}
           {% set related_posts = (related_posts.push(post), related_posts) %}
         {% endif %}
@@ -166,8 +171,14 @@ pageStyle: blog
   <div class="container">
     <h2>Latest Stories</h2>
     <div class="row">
+      {% if tags.includes("newsroom") %}
+        {% set articlePool = collections.newsroom | reverse %}
+      {% else %}
+        {% set articlePool = collections.blog | reverse %}
+      {% endif %}
+      
       {% set latestCount = 0 %}
-      {%- for post in collections.blog | reverse -%}
+      {%- for post in articlePool -%}
       {% if post.url != page.url and latestCount < 4 %}
       <div class="col-lg-6 col-md-6 mb-4">
         <a href="{{ post.url }}" class="latest-story-card" style="text-decoration: none; color: inherit;">

@@ -2,24 +2,33 @@
    ABOUT PAGE - MATCHING OLD SITE STYLING
    ==================================== */
 
-/* About Hero Section */
-#aboutHero {
-  padding: 25% 0 5% 0;
-  background: linear-gradient(
-      180deg,
-      rgba(27, 41, 53, 0.25) 0%,
-      rgba(27, 41, 53, 0.75) 100%
-    ),
-    url(/img/james-lewis-94yFYwJZVL4-unsplash.jpg);
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
-  background-position: 50% 85%;
-  background-size: cover;
-  color: var(--white);
+/* About Hero Section - Modern Design */
+.hero.hero-about {
+  position: relative;
+  background: url('/assets/images/about-bg.png') center/cover no-repeat;
+  color: #ffffff;
+  padding: 10rem 0 8rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
 }
 
-#aboutHero h1 {
-  color: white;
+.hero.hero-about h1 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+}
+
+.hero.hero-about h3 {
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+  color: #ffffff;
 }
 
 /* Mission Section */
@@ -99,12 +108,17 @@
   text-align: center;
 }
 
-/* Timeline Line and Circles */
+/* Timeline Container and Line */
+#ourHistory {
+  position: relative;
+}
+
 #ourHistory .line {
   height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0;
   position: relative;
+  z-index: 1;
 }
 
 /* Timeline Circles */
@@ -120,14 +134,14 @@
   z-index: 10;
 }
 
-/* Top timeline events */
+/* Top 4 years - circles below content */
 .timeline-event-top:after {
-  bottom: -35px;
+  bottom: -30px;
 }
 
-/* Bottom timeline events */
+/* Bottom 3 years - circles above content */
 .timeline-event-bottom:after {
-  top: -35px;
+  top: -30px;
 }
 
 /* Dotted connectors */
@@ -135,20 +149,30 @@
   content: "";
   position: absolute;
   width: 2px;
-  background: rgba(255, 255, 255, 0.5);
-  border-left: 2px dotted rgba(255, 255, 255, 0.5);
+  border-left: 2px dotted rgba(255, 255, 255, 0.6);
   left: calc(50% - 1px);
   z-index: 5;
 }
 
+/* Top events - dotted line from content to circle */
 .timeline-event-top:before {
-  bottom: -35px;
-  height: 30px;
+  bottom: -10px;
+  height: 40px;
 }
 
+/* Bottom events - dotted line from circle to content */
 .timeline-event-bottom:before {
-  top: -35px;
-  height: 30px;
+  top: -10px;
+  height: 40px;
+}
+
+/* Spacing adjustments */
+.timeline-event-top {
+  margin-bottom: 20px;
+}
+
+.timeline-event-bottom {
+  margin-top: 20px;
 }
 
 /* Responsive for mobile timeline */
@@ -234,4 +258,124 @@
 :root {
   --white: #ffffff;
   --gray-400: #ced4da;
+}
+
+/* Top News from EverWash Section */
+.top-news-section {
+  padding: 100px 0;
+  background: var(--color-white);
+}
+
+.top-news-section h2 {
+  color: var(--color-primary);
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-family-heading);
+}
+
+.visit-newsroom-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-family-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.visit-newsroom-link:hover {
+  color: var(--color-secondary);
+}
+
+.news-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: block;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.news-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+.news-content {
+  padding: 24px;
+}
+
+.news-date {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-family: var(--font-family-body);
+}
+
+.news-card h4 {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  font-family: var(--font-family-heading);
+}
+
+.news-excerpt {
+  color: var(--color-black);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: var(--font-family-body);
+}
+
+/* Mobile responsive for news section */
+@media (max-width: 768px) {
+  .top-news-section {
+    padding: 80px 0;
+  }
+  
+  .top-news-section h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .visit-newsroom-link {
+    font-size: 16px;
+  }
+  
+  .news-image-container {
+    height: 160px;
+  }
+  
+  .news-content {
+    padding: 20px;
+  }
+  
+  .news-card h4 {
+    font-size: 18px;
+  }
 }
