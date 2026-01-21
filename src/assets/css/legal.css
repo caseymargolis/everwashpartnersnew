@@ -5,7 +5,8 @@
 /* Legal Hero Section */
 .hero.hero-legal {
   position: relative;
-  background: var(--color-primary);
+  background:
+    url('/assets/images/hero-bg-casestudy.png') center/cover no-repeat;
   color: #ffffff;
   padding: 8rem 0 6rem;
   min-height: 60vh;
@@ -131,8 +132,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .hero.hero-legal {
-    padding: 6rem 0 4rem;
-    min-height: 50vh;
+    padding: 12rem 0 12rem;
+    min-height: 100vh;
   }
 
   .hero.hero-legal h1 {

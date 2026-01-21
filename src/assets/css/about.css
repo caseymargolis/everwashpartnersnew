@@ -33,7 +33,7 @@
 
 /* Mission Section */
 #aboutMission {
-  padding: 7% 0;
+  padding: 100px 0;
 }
 
 #aboutMission .col-lg-7 {
@@ -352,8 +352,35 @@
   font-family: var(--font-family-body);
 }
 
-/* Mobile responsive for news section */
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .hero.hero-about {
+    padding: 12rem 0 12rem;
+    min-height: 100vh;
+  }
+
+  .hero.hero-about h1 {
+    font-size: 36px;
+  }
+
+  .hero.hero-about h3 {
+    font-size: 20px;
+  }
+
+  #aboutMission,
+  #ourHistory {
+    padding: 80px 0;
+  }
+
+  #aboutMission h3 {
+    font-size: 2.5rem;
+  }
+
+  #ourHistory h3 {
+    font-size: 2.5rem;
+  }
+
+/* Mobile responsive for news section */
   .top-news-section {
     padding: 80px 0;
   }
