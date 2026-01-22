@@ -5,8 +5,7 @@
 /* Careers Hero Section */
 .hero.hero-careers {
   position: relative;
-  background:
-    url('/assets/images/hero-bg-casestudy.png') center/cover no-repeat;
+  background: url('/assets/images/careers-hero-bg.png') center/cover no-repeat;
   color: #ffffff;
   padding: 8rem 0 6rem;
   min-height: 60vh;
@@ -69,7 +68,6 @@
 }
 
 /* White Highlight Text */
-
 
 /* Blue Value Cards */
 .value-card-blue {
@@ -229,10 +227,52 @@
   font-family: var(--font-family-body);
 }
 
+/* Benefits Section */
+.careers-benefits {
+  padding: 100px 0;
+  background: var(--color-gray);
+}
+
+.careers-benefits h2 {
+  color: var(--color-primary);
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-family: var(--font-family-heading);
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.benefit-card h3 {
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: var(--font-family-heading);
+}
+
+.benefit-card p {
+  color: var(--color-black);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  font-family: var(--font-family-body);
+}
+
 /* Job Positions Section */
 .careers-positions {
   padding: 100px 0;
-  background: var(--color-gray);
+  background: var(--color-white);
 }
 
 .careers-positions h2 {
@@ -245,7 +285,7 @@
 
 .careers-positions .lead {
   color: var(--color-black);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   font-family: var(--font-family-body);
 }
@@ -259,8 +299,13 @@
 
 .btn-large {
   padding: 16px 40px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+}
+.btn__secondary {
+  display: inline-flex !important;
+
+  gap: 10px;
 }
 
 /* Center all buttons */
@@ -347,4 +392,17 @@
     order: 1;
     margin-bottom: 40px;
   }
+}
+.pr-30 {
+  padding-right: 30px;
+}
+.with_arrow {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.curve svg {
+  height: auto !important;
 }

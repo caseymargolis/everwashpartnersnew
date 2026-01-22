@@ -5,8 +5,7 @@
 /* Partners Hero Section */
 .hero.hero-partners {
   position: relative;
-  background: 
-    url('/assets/images/hero-bg-casestudy.png') center/cover no-repeat;
+  background: url('/assets/images/partners-hero-bg.png') center/cover no-repeat;
   color: #ffffff;
   padding: 8rem 0 6rem;
   min-height: 60vh;
@@ -17,7 +16,7 @@
 .hero.hero-partners h1 {
   font-family: var(--font-family-heading);
   font-weight: 700;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1.2;
   margin: 0 0 24px 0;
   color: #ffffff;
@@ -26,7 +25,7 @@
 .hero.hero-partners h3 {
   font-family: var(--font-family-body);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   margin: 0;
   color: #ffffff;
@@ -127,7 +126,10 @@
 }
 
 .partners-cta-section .btn__primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin: 0 auto;
 }
 
@@ -141,15 +143,19 @@
 
 .partners-cta-section .lead {
   color: var(--color-black);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   font-family: var(--font-family-body);
 }
 
 .btn-large {
   padding: 16px 40px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+  display: flex;
+}
+.btn__primary span {
+  display: inline-flex !important;
 }
 
 /* Mobile Responsive */

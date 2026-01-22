@@ -5,7 +5,8 @@
 /* Newsroom Hero Section */
 .hero.hero-newsroom {
   position: relative;
-  background: url('/assets/images/hero-bg-casestudy.png') center/cover no-repeat;
+  background: url('/assets/images/newsroompage-hero-bg.png') center/cover
+    no-repeat;
   color: #ffffff;
   padding: 8rem 0 6rem;
   min-height: 60vh;
