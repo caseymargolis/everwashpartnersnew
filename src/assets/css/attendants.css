@@ -2894,7 +2894,7 @@ table {
 .webinar-class h3 {
     font-family: var(--font-family-heading);
     font-weight: 400;
-    font-size: 26px;
+    font-size: 32px;
     line-height: 1.3;
     margin: 0;
 }
@@ -2953,7 +2953,7 @@ table {
   margin-bottom: max(5%, 3rem);
 }
 #attendantWebinars .webinar-class h4 {
-  font-size: 1.1rem;
+  font-size: 24px;
   text-transform: uppercase;
 }
 #attendantWebinars ol {
@@ -2973,8 +2973,10 @@ table {
   width: 475px;
 }
 #attendantWebinars .webinar-link-group {
-  margin-left: -0.3rem;
-  margin-right: -0.3rem;
+    margin-left: -0.3rem;
+    margin-right: -0.3rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #attendantWebinars .webinar-link-group a:nth-child(n + 5) {
@@ -3103,7 +3105,7 @@ table {
 #attendantDuties p {
   text-align: center;
   font-weight: 500;
-  font-size: 1.1rem !important;
+  font-size: 18px !important;
 }
 #attendantDuties .row > div {
   display: flex;
@@ -3226,7 +3228,7 @@ table {
 }
 
 .step-number {
-    font-size: 1.5rem; /* Smaller font size */
+    font-size: 32px; /* Smaller font size */
     font-weight: 700;
     margin-bottom: 8px;
     color: #333;
@@ -3242,6 +3244,10 @@ table {
         max-height: 250px; /* Even smaller on mobile */
     }
 }
+
+
+
+
 
 
 /* Faq section */
@@ -3328,12 +3334,4 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 768px) {
-  #attendantWebinars h2 {
-    margin-bottom: 0.5rem;
-    font-size: 36px;
-    margin-top: 28px;
-  }
 }
